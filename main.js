@@ -27,7 +27,6 @@ setInterval(() => {
 }, 3 * 60 * 60 * 1000);
 
 const settings = require('./settings');
-require('./config.js');
 const { isBanned } = require('./lib/isBanned');
 const yts = require('yt-search');
 const { fetchBuffer } = require('./lib/myfunc');
@@ -166,8 +165,8 @@ const channelInfo = {
         forwardingScore: 1,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363423464130445@newsletter',
-            newsletterName: 'Cata anak baik!',
+            newsletterJid: global.channel,
+            newsletterName: global.packname,
             serverMessageId: -1
         }
     }
