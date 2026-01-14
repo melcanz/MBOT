@@ -41,6 +41,7 @@ const { autotypingCommand, isAutotypingEnabled, handleAutotypingForMessage, hand
 const { autoreadCommand, isAutoreadEnabled, handleAutoread } = require('./commands/autoread');
 
 // Command imports
+const iFilterCommand = require('./commands/ifilter');
 const memegen = require('./commands/memegen')
 const waifuPicsCommand = require('./commands/waifupics');
 const canvasStickerCommand = require('./commands/canvasSticker')
