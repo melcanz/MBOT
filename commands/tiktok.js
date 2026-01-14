@@ -1,4 +1,4 @@
-const { download } = require("./lib/tiktok")
+const { download } = require("../lib/tiktok")
 
 const processedMessages = new Set()
 
