@@ -4,7 +4,7 @@ const settings = {
 
   botName: 'Cata Bot',
   botOwner: 'Kontlo',
-  ownerNumber: '6282198571732',
+  ownerNumber: '628219857173222',
 
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: 'private',
@@ -27,9 +27,10 @@ global.auth = `Ig: ${settings.author.replace('@', '')}`
 global.error = "❌️ Terjadi kesalahan, mohon coba lagi nanti!"
 global.load = "⏳️ Tunggu Sebentar, permintaan anda sedang kami proses"
 global.succes = "✅️ Berhasil"
-
 // CHANNEL
 global.channel = "120363423464130445@newsletter"
+
+global.prompt = "Kamu adalah lydia dan kamu diciptakan oleh Akbar, aksen kamu jaksel dan kamu membantu dalam pengodean"
 
 
 module.exports = settings
