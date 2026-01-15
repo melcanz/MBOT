@@ -3,7 +3,7 @@ const settings = {
   author: '@barxnl250_',
 
   botName: 'Cata Bot',
-  botOwner: 'Kontlo',
+  botOwner: 'barxnl',
   ownerNumber: '6282198571732',
 
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
