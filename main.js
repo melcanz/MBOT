@@ -155,15 +155,6 @@ const { pmblockerCommand, readState: readPmBlockerState } = require('./commands/
 const settingsCommand = require('./commands/settings');
 const soraCommand = require('./commands/sora');
 const chatbotCommand = require('./commands/chatbot')
-const Completion = require('./lib/Completion')
-
-const chatbotDB = path.join(__dirname, './data/chatbot.json')
-const aiSessions = new Map()
-
-const loadChatbot = () =>
-  fs.existsSync(chatbotDB)
-    ? JSON.parse(fs.readFileSync(chatbotDB))
-    : {}
 
 // Global settings
 global.packname = settings.packname;
@@ -196,7 +187,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
         await handleAutoread(sock, message);
 
         // AUTO REPLY JIKA BOT DI TAG
-        await tagBotCommand(sock, message)
+      //  await tagBotCommand(sock, message)
 
         // Store message for antidelete feature
         if (message.message) {
@@ -426,23 +417,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
         if (!isPublic && !isOwnerOrSudoCheck) {
             return;
         }
-        // chatbot
- const chatbotData = loadChatbot()
-
-const chatTarget = message.key.remoteJid
-
-const chatbotActive = chatbotData[chatTarget]
-
-const text =
-
-  message.message?.conversation ||
-
-  message.message?.extendedTextMessage?.text ||
-
-  ''
-
-const isCmd = text.startsWith('.')
-
+        
 // AUTO CHATBOT
 
         
@@ -500,9 +475,6 @@ const isCmd = text.startsWith('.')
     // ================= EVAL =================
 
         switch (true) {
-              /* case userMessage.startsWith('.chatbot'):
-  await handleChatbotCommand(sock, chatId, message)
-  break */
             case userMessage.startsWith('.qc'):
 case userMessage.startsWith('.qcstc'):
 case userMessage.startsWith('.stcqc'):
@@ -511,6 +483,11 @@ case userMessage.startsWith('.qcstick'): {
   await qc(sock, chatId, message, userMessage)
   break
 }
+            case userMessage.startsWith('.ifilter'): {
+            const args = userMessage.split(' ').slice(1);
+            await iFilterCommand(sock, chatId, message, args);
+            }
+            break;
             case userMessage.startsWith('.memegen'):
             await memegen(sock, chatId, message, userMessage)
             break
@@ -600,7 +577,7 @@ break;
                 await helpCommand(sock, chatId, message);
                 commandExecuted = true;
                 break;
-            case userMessage === '.sticker' || userMessage === '.s':
+            case userMessage === '.stikerfull' || userMessage === '.sfull' || userMessage === '.stickerfull':
                 await stickerCommand(sock, chatId, message);
                 commandExecuted = true;
                 break;
@@ -1289,7 +1266,7 @@ break;
                     await animeCommand(sock, chatId, message, [sub]);
                 }
                 break;
-            case userMessage === '.crop':
+            case userMessage === '.sticker' || userMessage === '.s' || userMessage === '.stiker':
                 await stickercropCommand(sock, chatId, message);
                 commandExecuted = true;
                 break;
