@@ -1,10 +1,10 @@
 const settings = {
-  packname: 'Catashtroph',
-  author: '@barxnl250_',
+  packname: 'VantyxBot',
+  author: '@VantyxBot',
 
-  botName: 'Cata Bot',
-  botOwner: 'Akbar',
-  ownerNumber: '6282198571732',
+  botName: 'Vantyx',
+  botOwner: 'Bot',
+  ownerNumber: '6287755080455',
 
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: 'private',
@@ -30,7 +30,7 @@ global.succes = "✅️ Berhasil"
 // CHANNEL
 global.channel = "120363423464130445@newsletter"
 
-global.prompt = "Kamu adalah lydia dan kamu diciptakan oleh Akbar, aksen kamu jaksel dan kamu membantu dalam pengodean"
+global.prompt = "Kamu adalah Vantyx dan kamu diciptakan oleh Owner, aksen kamu jaksel dan kamu membantu dalam pengodean"
 
 
 module.exports = settings
